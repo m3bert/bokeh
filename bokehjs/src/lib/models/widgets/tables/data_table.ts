@@ -130,7 +130,7 @@ export class DataTableView extends WidgetView {
     // compute_indices. This "over execution" will be addressed in a more
     // general look at events
     this.model.view.compute_indices()
-    this.data.constructor(this.model.source, this.model.view)
+    new (this.data.constructor as any)(this.model.source, this.model.view)
 
     // This is obnoxious but there is no better way to programmatically force
     // a re-sort on the existing sorted columns until/if we start using DataView
